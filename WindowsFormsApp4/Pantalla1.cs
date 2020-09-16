@@ -37,16 +37,21 @@ namespace WindowsFormsApp4
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Pantalla2 form2 = new Pantalla2();
-            form2.Show();
+            Program.pantalla1.Hide();
+            Program.pantalla2 = new Pantalla2();
+            Program.pantalla2.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Pantalla3 form1 = new Pantalla3();
-            form1.Show();
+            Program.pantalla1.Hide();
+            Program.pantalla3 = new Pantalla3();
+            Program.pantalla3.Show();
+        }
+
+        private void Pantalla1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

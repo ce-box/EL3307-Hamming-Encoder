@@ -105,8 +105,9 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "Volver";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form1
+            // Pantalla3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -118,8 +119,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtGV2);
             this.Controls.Add(this.dtGV1);
-            this.Name = "Form1";
+            this.Name = "Pantalla3";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Pantalla3_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtGV1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGV2)).EndInit();

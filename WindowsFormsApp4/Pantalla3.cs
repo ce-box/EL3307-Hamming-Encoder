@@ -91,5 +91,18 @@ namespace WindowsFormsApp4
         {
             ((DataRowView)dtGV1.Rows[0].DataBoundItem).DataView.Table.Rows[1][1] = 1;
         }
+
+        private void Pantalla3_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Program.pantalla3.Hide();
+            Program.pantalla1.Show();
+        }
+
+       
     }
 }

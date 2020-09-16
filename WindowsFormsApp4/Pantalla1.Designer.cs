@@ -78,6 +78,7 @@
             this.Controls.Add(this.btn1);
             this.Controls.Add(this.label1);
             this.Name = "Pantalla1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Pantalla1_FormClosing);
             this.Load += new System.EventHandler(this.Pantalla1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
