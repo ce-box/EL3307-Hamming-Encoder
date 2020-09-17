@@ -16,6 +16,7 @@ namespace WindowsFormsApp4
     {
         Convertidor convertir = new Convertidor();
         NRZI nRZI = new NRZI();
+        List<string> hexadecimal = new List<string> {"0","1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F" };
         public Pantalla2()
         {
             InitializeComponent();
@@ -57,10 +58,46 @@ namespace WindowsFormsApp4
 
         private void button2_Click(object sender, EventArgs e)
         {
+            txtE2.Text = txtE2.Text.ToUpper();
+            string numero = txtE2.Text;
+            
+            bool verificado = false;
+            int con = 0;
+            while(con < numero.Length) {
+                for (int i = 0; i < 16; i++)
+                {
+                    if (numero.Substring(con, 1) == hexadecimal[i])
+                    {
+                        verificado = true;
 
-            txt3.Text = convertir.hexa_bi(txtE2.Text);
+                    }
+                }
+                if (verificado == false)
+                {
+                    txt3.Text = "Error Caracter Invalido";
+                    
+                    break;
+                }
+                else
+                {
+                    verificado = false;
+                }
+                con++;
+            }
+            if (con == numero.Length)
+            {
+                txt3.Text = convertir.hexa_bi(txtE2.Text);
 
-            nRZI.rellenar2(txt3.Text, chart2);
+                nRZI.rellenar2(txt3.Text, chart2);
+                con = 0;
+            }
+            else
+            {
+                MessageBox.Show("No se pudo realizar la conversión");
+                con = 0;
+            }
+            
+            
         }
 
         private void Pantalla2_FormClosing(object sender, FormClosingEventArgs e)
