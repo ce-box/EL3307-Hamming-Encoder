@@ -15,6 +15,7 @@ namespace WindowsFormsApp4
     public partial class Pantalla2 : Form
     {
         Convertidor convertir = new Convertidor();
+        
         NRZI nRZI = new NRZI();
         List<string> hexadecimal = new List<string> {"0","1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F" };
         public Pantalla2()
@@ -89,6 +90,7 @@ namespace WindowsFormsApp4
                 txt3.Text = convertir.hexa_bi(txtE2.Text);
 
                 nRZI.rellenar2(txt3.Text, chart2);
+                
                 con = 0;
             }
             else
@@ -122,7 +124,10 @@ namespace WindowsFormsApp4
             chart1.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.Gainsboro;
             chart1.ChartAreas[0].AxisX.LineColor = Color.White;
             chart1.ChartAreas[0].AxisY.LabelStyle.Enabled = false;
-            chart1.ChartAreas[0].AxisX.LabelStyle.Enabled = false;
+            
+
+
+            //chart1.ChartAreas[0].AxisX.LabelStyle.Enabled = false;
             chart1.ChartAreas[0].AxisY.Title= "Amplitud";
             chart1.ChartAreas[0].AxisX.Title = "Time";
             chart1.Series["NRZI"].IsVisibleInLegend = false;
@@ -136,11 +141,14 @@ namespace WindowsFormsApp4
             chart2.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.Gainsboro;
             chart2.ChartAreas[0].AxisX.LineColor = Color.White;
             chart2.ChartAreas[0].AxisY.LabelStyle.Enabled = false;
-            chart2.ChartAreas[0].AxisX.LabelStyle.Enabled = false;
+            //chart2.ChartAreas[0].AxisX.LabelStyle.Enabled = false;
             chart2.ChartAreas[0].AxisY.Title = "Amplitud";
             chart2.ChartAreas[0].AxisX.Title = "Time";
             chart2.Series["NRZI"].IsVisibleInLegend = false;
             chart2.Series["Centro"].IsVisibleInLegend = false;
+
+            
+            
 
         }
 
