@@ -46,34 +46,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Convertidor.cs" />
-    <Compile Include="Pantalla2.cs">
+    <Compile Include="Modulos\NRZI.cs" />
+    <Compile Include="Modulos\Convertidor.cs" />
+    <Compile Include="Pantallas\Pantalla2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantalla2.Designer.cs">
+    <Compile Include="Pantallas\Pantalla2.Designer.cs">
       <DependentUpon>Pantalla2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantalla3.cs">
+    <Compile Include="Pantallas\Pantalla3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantalla3.Designer.cs">
+    <Compile Include="Pantallas\Pantalla3.Designer.cs">
       <DependentUpon>Pantalla3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pantalla1.cs">
+    <Compile Include="Pantallas\Pantalla1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantalla1.Designer.cs">
+    <Compile Include="Pantallas\Pantalla1.Designer.cs">
       <DependentUpon>Pantalla1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Pantalla2.resx">
+    <EmbeddedResource Include="Pantallas\Pantalla2.resx">
       <DependentUpon>Pantalla2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantalla3.resx">
+    <EmbeddedResource Include="Pantallas\Pantalla3.resx">
       <DependentUpon>Pantalla3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantalla1.resx">
+    <EmbeddedResource Include="Pantallas\Pantalla1.resx">
       <DependentUpon>Pantalla1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
