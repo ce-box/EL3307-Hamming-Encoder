@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp4.Modulos;
 
 namespace WindowsFormsApp4
 {
@@ -89,6 +90,13 @@ namespace WindowsFormsApp4
 
         private void btn1_Click(object sender, EventArgs e)
         {
+            textBox1.Text = textBox1.Text.ToUpper();
+            string numero = textBox1.Text;
+            
+            Hamming hamming = new Hamming();
+            hamming.EncodeHamming(numero);
+
+
             ((DataRowView)dtGV1.Rows[0].DataBoundItem).DataView.Table.Rows[1][1] = 1;
         }
 
@@ -103,6 +111,9 @@ namespace WindowsFormsApp4
             Program.pantalla1.Show();
         }
 
-       
+        private void dtGV1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

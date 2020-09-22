@@ -59,9 +59,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 44);
+            this.label1.Location = new System.Drawing.Point(28, 54);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(417, 31);
+            this.label1.Size = new System.Drawing.Size(523, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Convertir de Binario a Hexa/Octal\r\n";
             // 
@@ -69,32 +70,37 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(534, 44);
+            this.label2.Location = new System.Drawing.Point(712, 54);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(426, 31);
+            this.label2.Size = new System.Drawing.Size(538, 39);
             this.label2.TabIndex = 1;
             this.label2.Text = "Convetir de Hexadecimal a binario";
             // 
             // txtE1
             // 
-            this.txtE1.Location = new System.Drawing.Point(27, 91);
+            this.txtE1.Location = new System.Drawing.Point(36, 112);
+            this.txtE1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtE1.Name = "txtE1";
-            this.txtE1.Size = new System.Drawing.Size(432, 20);
+            this.txtE1.Size = new System.Drawing.Size(575, 22);
             this.txtE1.TabIndex = 2;
+            this.txtE1.TextChanged += new System.EventHandler(this.txtE1_TextChanged);
             // 
             // txtE2
             // 
-            this.txtE2.Location = new System.Drawing.Point(540, 91);
+            this.txtE2.Location = new System.Drawing.Point(720, 112);
+            this.txtE2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtE2.MaxLength = 3;
             this.txtE2.Name = "txtE2";
-            this.txtE2.Size = new System.Drawing.Size(420, 20);
+            this.txtE2.Size = new System.Drawing.Size(559, 22);
             this.txtE2.TabIndex = 3;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(166, 130);
+            this.button1.Location = new System.Drawing.Point(221, 160);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 4;
             this.button1.Text = "Convertir";
             this.button1.UseVisualStyleBackColor = true;
@@ -102,9 +108,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(721, 130);
+            this.button2.Location = new System.Drawing.Point(961, 160);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 5;
             this.button2.Text = "Convertir";
             this.button2.UseVisualStyleBackColor = true;
@@ -114,9 +121,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(37, 397);
+            this.label3.Location = new System.Drawing.Point(49, 489);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(170, 31);
+            this.label3.Size = new System.Drawing.Size(215, 39);
             this.label3.TabIndex = 6;
             this.label3.Text = "Hexadecimal";
             // 
@@ -124,9 +132,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(715, 397);
+            this.label4.Location = new System.Drawing.Point(953, 489);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 31);
+            this.label4.Size = new System.Drawing.Size(124, 39);
             this.label4.TabIndex = 7;
             this.label4.Text = "Binario";
             // 
@@ -134,44 +143,49 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(316, 397);
+            this.label5.Location = new System.Drawing.Point(421, 489);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 31);
+            this.label5.Size = new System.Drawing.Size(96, 39);
             this.label5.TabIndex = 8;
             this.label5.Text = "Octal";
             // 
             // txt1
             // 
             this.txt1.BackColor = System.Drawing.Color.White;
-            this.txt1.Location = new System.Drawing.Point(12, 448);
+            this.txt1.Location = new System.Drawing.Point(16, 551);
+            this.txt1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt1.Name = "txt1";
             this.txt1.ReadOnly = true;
-            this.txt1.Size = new System.Drawing.Size(214, 20);
+            this.txt1.Size = new System.Drawing.Size(284, 22);
             this.txt1.TabIndex = 9;
             // 
             // txt2
             // 
             this.txt2.BackColor = System.Drawing.Color.White;
-            this.txt2.Location = new System.Drawing.Point(245, 448);
+            this.txt2.Location = new System.Drawing.Point(327, 551);
+            this.txt2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt2.Name = "txt2";
             this.txt2.ReadOnly = true;
-            this.txt2.Size = new System.Drawing.Size(214, 20);
+            this.txt2.Size = new System.Drawing.Size(284, 22);
             this.txt2.TabIndex = 10;
             // 
             // txt3
             // 
             this.txt3.BackColor = System.Drawing.Color.White;
-            this.txt3.Location = new System.Drawing.Point(657, 448);
+            this.txt3.Location = new System.Drawing.Point(876, 551);
+            this.txt3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt3.Name = "txt3";
             this.txt3.ReadOnly = true;
-            this.txt3.Size = new System.Drawing.Size(214, 20);
+            this.txt3.Size = new System.Drawing.Size(284, 22);
             this.txt3.TabIndex = 11;
             // 
             // btn3
             // 
-            this.btn3.Location = new System.Drawing.Point(832, 522);
+            this.btn3.Location = new System.Drawing.Point(1109, 642);
+            this.btn3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn3.Name = "btn3";
-            this.btn3.Size = new System.Drawing.Size(75, 23);
+            this.btn3.Size = new System.Drawing.Size(100, 28);
             this.btn3.TabIndex = 12;
             this.btn3.Text = "Volver";
             this.btn3.UseVisualStyleBackColor = true;
@@ -184,7 +198,8 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(27, 173);
+            this.chart1.Location = new System.Drawing.Point(36, 213);
+            this.chart1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             series1.ChartArea = "ChartArea1";
@@ -198,7 +213,7 @@
             series2.Name = "Centro";
             this.chart1.Series.Add(series1);
             this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(432, 221);
+            this.chart1.Size = new System.Drawing.Size(576, 272);
             this.chart1.TabIndex = 13;
             this.chart1.Text = "chart1";
             // 
@@ -209,7 +224,8 @@
             this.chart2.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chart2.Legends.Add(legend2);
-            this.chart2.Location = new System.Drawing.Point(540, 173);
+            this.chart2.Location = new System.Drawing.Point(720, 213);
+            this.chart2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chart2.Name = "chart2";
             this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             series3.ChartArea = "ChartArea1";
@@ -223,15 +239,15 @@
             series4.Name = "Centro";
             this.chart2.Series.Add(series3);
             this.chart2.Series.Add(series4);
-            this.chart2.Size = new System.Drawing.Size(432, 221);
+            this.chart2.Size = new System.Drawing.Size(576, 272);
             this.chart2.TabIndex = 14;
             this.chart2.Text = "chart2";
             // 
             // Pantalla2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 591);
+            this.ClientSize = new System.Drawing.Size(1312, 727);
             this.Controls.Add(this.chart2);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.btn3);
@@ -247,6 +263,7 @@
             this.Controls.Add(this.txtE1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Pantalla2";
             this.Text = "Pantalla2";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Pantalla2_FormClosing);
