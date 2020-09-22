@@ -38,18 +38,11 @@ namespace WindowsFormsApp4
             dt.Columns.Add("d5");
             dt.Columns.Add("d6");
             dt.Columns.Add("d7");
-            dt.Columns.Add("d8");
-            dt.Columns.Add("d9");
-            dt.Columns.Add("d10");
-            dt.Columns.Add("d11");
-            dt.Columns.Add("P5");
-            dt.Columns.Add("d12");
             dt.Rows.Add("Sin paridad");
             dt.Rows.Add("P1");
             dt.Rows.Add("P2");
             dt.Rows.Add("P3");
             dt.Rows.Add("P4");
-            dt.Rows.Add("P5");
             dt.Rows.Add("Con paridad");
 
             dtGV1.DataSource = dt;
@@ -69,18 +62,11 @@ namespace WindowsFormsApp4
             dt2.Columns.Add("d5");
             dt2.Columns.Add("d6");
             dt2.Columns.Add("d7");
-            dt2.Columns.Add("d8");
-            dt2.Columns.Add("d9");
-            dt2.Columns.Add("d10");
-            dt2.Columns.Add("d11");
-            dt2.Columns.Add("P5");
-            dt2.Columns.Add("d12");
             dt2.Rows.Add("Sin paridad");
             dt2.Rows.Add("P1");
             dt2.Rows.Add("P2");
             dt2.Rows.Add("P3");
             dt2.Rows.Add("P4");
-            dt2.Rows.Add("P5");
             dt2.Rows.Add("Con paridad");
 
             dtGV2.DataSource = dt2;
@@ -94,10 +80,22 @@ namespace WindowsFormsApp4
             string numero = textBox1.Text;
             
             Hamming hamming = new Hamming();
-            hamming.EncodeHamming(numero);
+            int[,] result = hamming.EncodeHamming(numero);
+
+            for (int row = 0; row < 6; row++)
+            {
+                for (int col = 0; col < 11; col++)
+                {
+                    int data = result[row, col];
+                    if (data == 5)
+                        continue;
+                    else
+                        ((DataRowView)dtGV1.Rows[0].DataBoundItem).DataView.Table.Rows[row][col+1] = data;
 
 
-            ((DataRowView)dtGV1.Rows[0].DataBoundItem).DataView.Table.Rows[1][1] = 1;
+                }
+            }
+            
         }
 
         private void Pantalla3_FormClosing(object sender, FormClosingEventArgs e)
@@ -112,6 +110,16 @@ namespace WindowsFormsApp4
         }
 
         private void dtGV1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

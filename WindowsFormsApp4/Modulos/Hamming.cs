@@ -20,8 +20,9 @@ namespace WindowsFormsApp4.Modulos
         private int[] parityBits = new int[parityQty];
 
         // Main  Function
-        public string EncodeHamming(string data)
+        public int[,] EncodeHamming(string data)
         {
+            InitMatrix();
             StringToBitArray(data);
             WriteFirstLine();
             foreach (int bit in bits)
@@ -29,9 +30,9 @@ namespace WindowsFormsApp4.Modulos
                 Console.Write(bit);
             }
             Console.WriteLine();
-            ShowMatrix();
             CalculateParity();
-            return data; 
+            ShowMatrix();
+            return HammingMatrix; 
         } 
 
         private bool StringToBitArray(string data)
@@ -60,32 +61,33 @@ namespace WindowsFormsApp4.Modulos
 
         private void CalculateParity() 
         {
-            // TODO: Completar esta función
-            // Aplicar  XOR (^) A los campos
-            for(int parityBit = 0; parityBit < parityQty; parityBit++)
+            //[p0,p1,p2,p3,...]
+            for(int pb = 0; pb < parityQty; pb++)
             {
-                for(int bitPos = 0; bitPos < 11; bitPos++)
+                int parityCol = ((int)Math.Pow(2,pb)) - 1;
+                int counter = 0;
+                for(int col = 0; col < cols; col++)
                 {
-                    if(IsPowerOfTwo(bitPos + 1))
+                    if (IsPowerOfTwo(col + 1))
                         continue;
-                    if (((bitPos >> parityBit) & 1) == 1)
-                        // Apply XOR
-                        parityBits[parityBit] = parityBits[parityBit] ^ HammingMatrix[0, bitPos];
-
+                    if ((((col+1) >> pb) & 1) == 1)// Bitwise >> operator 
+                    {
+                        int data = HammingMatrix[0, col];
+                        counter += data;
+                        HammingMatrix[pb+1, col] = data;
+                    }
                 }
-                Console.WriteLine("Paridad =>"+parityBit+" :: "+parityBits[parityBit]);
+                parityBits[pb] = counter % 2 == 0 ? 0 : 1;
+
+                // Fill Matrix
+                HammingMatrix[pb + 1, parityCol] = parityBits[pb];
+                HammingMatrix[5, parityCol] = parityBits[pb];
+
+                Console.WriteLine("Paridad =>" + pb + " :: " + parityBits[pb]);
             }
         }
 
-        private void FillSolvedMatrix() { }
-
-
-
-        // -------------------------------------------
-
-        private void InitMatrix() { }
-
-        private void ShowMatrix()
+        private void FillSolvedMatrix() 
         {
             for (int row = 0; row < rows; row++)
             {
@@ -93,6 +95,38 @@ namespace WindowsFormsApp4.Modulos
                 {
                     Console.Write(HammingMatrix[row, col]);
                     Console.Write(", ");
+                }
+                Console.WriteLine();
+            }
+        }
+
+
+
+        // -------------------------------------------
+
+        private void InitMatrix() 
+        {
+            for (int row = 0; row < rows; row++)
+            {
+                for (int col = 0; col < cols; col++)
+                {
+                    HammingMatrix[row, col] = 5;
+                }
+            }
+        }
+
+        private void ShowMatrix()
+        {
+            for (int row = 0; row < rows; row++)
+            {
+                for (int col = 0; col < cols; col++)
+                {
+                    int data = HammingMatrix[row, col];
+                    if (data == 5)
+                        Console.Write(" ");
+                    else
+                        Console.Write(data);
+                    Console.Write(" | ");
                 }
                 Console.WriteLine();
             }
