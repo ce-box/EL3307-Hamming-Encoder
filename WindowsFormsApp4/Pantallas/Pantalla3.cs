@@ -38,6 +38,7 @@ namespace WindowsFormsApp4
             dt.Columns.Add("d5");
             dt.Columns.Add("d6");
             dt.Columns.Add("d7");
+            dt.Columns.Add("        ");
             dt.Rows.Add("Sin paridad");
             dt.Rows.Add("P1");
             dt.Rows.Add("P2");
@@ -46,6 +47,7 @@ namespace WindowsFormsApp4
             dt.Rows.Add("Con paridad");
 
             dtGV1.DataSource = dt;
+            dtGV1.AutoResizeColumns();
 
 
 
@@ -62,6 +64,7 @@ namespace WindowsFormsApp4
             dt2.Columns.Add("d5");
             dt2.Columns.Add("d6");
             dt2.Columns.Add("d7");
+            dt2.Columns.Add("Error");
             dt2.Rows.Add("Sin paridad");
             dt2.Rows.Add("P1");
             dt2.Rows.Add("P2");
@@ -70,8 +73,9 @@ namespace WindowsFormsApp4
             dt2.Rows.Add("Con paridad");
 
             dtGV2.DataSource = dt2;
+            dtGV2.AutoResizeColumns();
 
-           
+
         }
 
         private void btn1_Click(object sender, EventArgs e)
@@ -95,7 +99,14 @@ namespace WindowsFormsApp4
 
                 }
             }
+
+            btn2.Enabled = true;
             
+        }
+
+        private void btn2_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void Pantalla3_FormClosing(object sender, FormClosingEventArgs e)
@@ -111,7 +122,7 @@ namespace WindowsFormsApp4
 
         private void dtGV1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         private void label1_Click(object sender, EventArgs e)

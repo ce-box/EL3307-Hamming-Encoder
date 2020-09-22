@@ -33,7 +33,9 @@ namespace WindowsFormsApp4.Modulos
             CalculateParity();
             ShowMatrix();
             return HammingMatrix; 
-        } 
+        }
+
+        public int[,] ErrorDetection(string data) { return HammingMatrix; }
 
         private bool StringToBitArray(string data)
         {
@@ -61,25 +63,27 @@ namespace WindowsFormsApp4.Modulos
 
         private void CalculateParity() 
         {
-            //[p0,p1,p2,p3,...]
             for(int pb = 0; pb < parityQty; pb++)
             {
                 int parityCol = ((int)Math.Pow(2,pb)) - 1;
                 int counter = 0;
+
                 for(int col = 0; col < cols; col++)
                 {
-                    if (IsPowerOfTwo(col + 1))
-                        continue;
-                    if ((((col+1) >> pb) & 1) == 1)// Bitwise >> operator 
-                    {
+                    if (IsPowerOfTwo(col + 1)) continue;
+
+                    // Bitwise >> operator 
+                    if ((((col+1) >> pb) & 1) == 1)                    {
                         int data = HammingMatrix[0, col];
                         counter += data;
                         HammingMatrix[pb+1, col] = data;
                     }
                 }
+
+                // Calculate parity
                 parityBits[pb] = counter % 2 == 0 ? 0 : 1;
 
-                // Fill Matrix
+                // Fill matrix (parity positions)
                 HammingMatrix[pb + 1, parityCol] = parityBits[pb];
                 HammingMatrix[5, parityCol] = parityBits[pb];
 
