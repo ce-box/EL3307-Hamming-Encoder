@@ -83,8 +83,8 @@ namespace WindowsFormsApp4
             textBox1.Text = textBox1.Text.ToUpper();
             string numero = textBox1.Text;
             
-            Hamming hamming = new Hamming();
-            int[,] result = hamming.EncodeHamming(numero);
+            HammingCode hamming = new HammingCode();
+            int[,] result = hamming.DataEncoding(numero);
 
             for (int row = 0; row < 6; row++)
             {

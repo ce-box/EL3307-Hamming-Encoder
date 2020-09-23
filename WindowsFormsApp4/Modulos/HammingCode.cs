@@ -37,7 +37,16 @@ namespace WindowsFormsApp4.Modulos
          */
         public int[,] DataEncoding(string data)
         {
-            return new int[1, 2];
+            if (data.Length != dataSize) return new int[0, 0];
+
+            Init();
+            int[] bitArray = SplitData(data);
+            bitArray = CalculateParity(bitArray);
+            FillMatrix(bitArray);
+
+            Show();
+
+            return hammingMatrix;
         }
 
         /**
@@ -78,8 +87,9 @@ namespace WindowsFormsApp4.Modulos
             int index = 0;
 
             for (int i = 0; i < columns; i++){
-                if (!IsPowerOfTwo(i)){
-                    bitArray[i] = data[index];
+
+                if (!IsPowerOfTwo(i + 1)){
+                    bitArray[i] = data[index].Equals('1') ? 1:0;
                     index++;
                 }
             }
@@ -98,8 +108,8 @@ namespace WindowsFormsApp4.Modulos
         {
             for (int rb = 0; rb < redundantBits; rb++)
             {
-                int parityCol = 0;
-                int counter = 1;
+                int parityCol = ((int)Math.Pow(2, rb)) - 1;
+                int counter = 0;
                 // Count occurrences of 1 
                 for (int col  = 0; col < columns; col++)
                 {
@@ -239,6 +249,18 @@ namespace WindowsFormsApp4.Modulos
         }
 
         /**
+         * Fill the hamming matrix with the data from the solution
+         * 
+         * @param int[] data Array with hamming code
+         */
+        private void FillMatrix(int[] data)
+        {
+            WriteFirstLine(data);
+            WriteLines(data);
+            WriteLastLine(data);
+        }
+
+        /**
          * Fill the first row of the matrix with only the information from the data bits
          * 
          * @param int[] data Array with hamming code
@@ -260,10 +282,7 @@ namespace WindowsFormsApp4.Modulos
         private void WriteLastLine(int[] data)
         {
             for (int col = 0; col < columns; col++)
-            {
-                if (!IsPowerOfTwo(col + 1))
-                    hammingMatrix[rows-1, col] = data[col];
-            }
+                hammingMatrix[rows-1, col] = data[col];
         }
 
         /**
@@ -300,6 +319,7 @@ namespace WindowsFormsApp4.Modulos
                     string value = bit != defaultVal ? bit.ToString() : " ";
                     Console.Write(value + " | ");
                 }
+                Console.WriteLine();
             }
         }
 
