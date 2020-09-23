@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Modulos\Hamming.cs" />
     <Compile Include="Modulos\HammingCode.cs" />
     <Compile Include="Modulos\NRZI.cs" />
     <Compile Include="Modulos\Convertidor.cs" />
