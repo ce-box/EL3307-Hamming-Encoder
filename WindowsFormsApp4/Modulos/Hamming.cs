@@ -73,7 +73,7 @@ namespace WindowsFormsApp4.Modulos
                     if (IsPowerOfTwo(col + 1)) continue;
 
                     // Bitwise >> operator 
-                    if ((((col+1) >> pb) & 1) == 1)                    {
+                    if ((((col+1) >> pb) & 1) == 1){
                         int data = HammingMatrix[0, col];
                         counter += data;
                         HammingMatrix[pb+1, col] = data;
