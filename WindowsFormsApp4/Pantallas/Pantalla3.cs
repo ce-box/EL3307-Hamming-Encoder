@@ -108,7 +108,7 @@ namespace WindowsFormsApp4
         {
             HammingCode hamming = new HammingCode();
             Console.WriteLine("-------------------------------------");
-            string code = "10001100100";
+            string code = "11111010100110110";
             int[,] result = hamming.ErrorDetection(code);
             int[] error = hamming.errorArray;
             int[] originalParity = hamming.originalParity;
@@ -130,6 +130,7 @@ namespace WindowsFormsApp4
             for (int i = 0; i < 4; i++)
                 ((DataRowView)dtGV2.Rows[0].DataBoundItem).DataView.Table.Rows[i + 1][12] = error[i];
 
+            Console.WriteLine("Error array :: " + string.Join("", error));
             Console.WriteLine("Paridad Original :: " + string.Join("", originalParity));
             Console.WriteLine("Paridad Calculada :: " + string.Join("", actualParity));
             Console.WriteLine("Bit del Error :: " + errorBit);

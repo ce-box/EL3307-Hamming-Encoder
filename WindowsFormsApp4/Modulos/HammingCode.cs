@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WindowsFormsApp4.Modulos
 {
@@ -14,8 +10,8 @@ namespace WindowsFormsApp4.Modulos
     {
         // Environment settings
         const int defaultVal = 5; // Default value of the matrix, it cannot be neither 0 nor 1
-        const int dataSize = 7;
-        const int redundantBits = 4;
+        const int dataSize = 12;
+        const int redundantBits = 5;
         const int columns = dataSize + redundantBits;
         const int rows = redundantBits + 2;
         int parity = 0; // Even parity by default
@@ -23,12 +19,12 @@ namespace WindowsFormsApp4.Modulos
 
         // Global Variables
         public static int[,] hammingMatrix = new int[rows, columns];
-        
+
         // Error Detection  Variables
         public int[] originalParity, currentParity;
         public int[] errorArray = new int[redundantBits];
         public int errorBit = 0;
-        
+
 
         // -----------------------------------------------------------------
         // Data encoding and error detection
@@ -44,7 +40,7 @@ namespace WindowsFormsApp4.Modulos
 
             int[] bitArray = SplitInputData(data);
             bitArray = CalculateParity(bitArray);
-            
+
             FillMatrix(bitArray);
             Show();
 
@@ -64,7 +60,7 @@ namespace WindowsFormsApp4.Modulos
 
             int[] bitArray = SplitCodeData(data);
             originalParity = GetParityBits(bitArray);
-            
+
             bitArray = CalculateParity(bitArray);
             currentParity = GetParityBits(bitArray);
 
@@ -104,10 +100,12 @@ namespace WindowsFormsApp4.Modulos
             int[] bitArray = new int[columns];
             int index = 0;
 
-            for (int i = 0; i < columns; i++){
+            for (int i = 0; i < columns; i++)
+            {
 
-                if (!IsPowerOfTwo(i + 1)){
-                    bitArray[i] = data[index].Equals('1') ? 1:0;
+                if (!IsPowerOfTwo(i + 1))
+                {
+                    bitArray[i] = data[index].Equals('1') ? 1 : 0;
                     index++;
                 }
             }
@@ -144,7 +142,7 @@ namespace WindowsFormsApp4.Modulos
                 int parityCol = ((int)Math.Pow(2, rb)) - 1;
                 int counter = 0;
                 // Count occurrences of 1 
-                for (int col  = 0; col < columns; col++)
+                for (int col = 0; col < columns; col++)
                 {
                     if (IsPowerOfTwo(col + 1)) continue;
                     if (ParityBitPosition(col + 1, rb))
@@ -175,7 +173,7 @@ namespace WindowsFormsApp4.Modulos
             int index = 0;
             for (int col = 0; col < columns; col++)
             {
-                if(IsPowerOfTwo(col + 1))
+                if (IsPowerOfTwo(col + 1))
                 {
                     parityArray[index] = bitArray[col];
                     index++;
@@ -192,10 +190,11 @@ namespace WindowsFormsApp4.Modulos
          * @return bool If the parities are equal, it returns true, otherwise false.
          */
         private bool CompareParity(int[] p1, int[] p2)
-        {    
+        {
             int index = 0;
 
-            while (index < redundantBits){
+            while (index < redundantBits)
+            {
                 if (p1[index] != p2[index])
                     return false;
                 index++;
@@ -234,7 +233,7 @@ namespace WindowsFormsApp4.Modulos
          */
         private int GetErrorPosition(int[] errorArray)
         {
-            int errorPosition = 1;
+            int errorPosition = 0;
             for (int n = 0; n < redundantBits; n++)
                 errorPosition += errorArray[n] * (int)Math.Pow(n, 2);
 
@@ -318,7 +317,7 @@ namespace WindowsFormsApp4.Modulos
         private void WriteLastLine(int[] data)
         {
             for (int col = 0; col < columns; col++)
-                hammingMatrix[rows-1, col] = data[col];
+                hammingMatrix[rows - 1, col] = data[col];
         }
 
         /**
@@ -328,12 +327,12 @@ namespace WindowsFormsApp4.Modulos
          */
         private void WriteLines(int[] data)
         {
-            for (int rb = 0; rb  < redundantBits; rb++)
+            for (int rb = 0; rb < redundantBits; rb++)
             {
                 int parityCol = ((int)Math.Pow(2, rb)) - 1;
-                for (int col = 0; col  < columns; col++)
+                for (int col = 0; col < columns; col++)
                 {
-                    if (IsPowerOfTwo(col + 1)) 
+                    if (IsPowerOfTwo(col + 1))
                         continue;
                     if (ParityBitPosition(col + 1, rb))
                         hammingMatrix[rb + 1, col] = data[col];
@@ -347,8 +346,8 @@ namespace WindowsFormsApp4.Modulos
          */
         private void Show()
         {
-            for (int row = 0; row < rows; row++) 
-            { 
+            for (int row = 0; row < rows; row++)
+            {
                 for (int col = 0; col < columns; col++)
                 {
                     int bit = hammingMatrix[row, col];
