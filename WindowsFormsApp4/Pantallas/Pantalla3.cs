@@ -106,7 +106,33 @@ namespace WindowsFormsApp4
 
         private void btn2_Click(object sender, EventArgs e)
         {
+            HammingCode hamming = new HammingCode();
+            Console.WriteLine("-------------------------------------");
+            string code = "10001100100";
+            int[,] result = hamming.ErrorDetection(code);
+            int[] error = hamming.errorArray;
+            int[] originalParity = hamming.originalParity;
+            int[] actualParity = hamming.currentParity;
+            int errorBit = hamming.errorBit;
 
+            for (int row = 0; row < 6; row++)
+            {
+                for (int col = 0; col < 11; col++)
+                {
+                    int data = result[row, col];
+                    if (data == 5)
+                        continue;
+                    else
+                        ((DataRowView)dtGV2.Rows[0].DataBoundItem).DataView.Table.Rows[row][col + 1] = data;
+                }
+            }
+
+            for (int i = 0; i < 4; i++)
+                ((DataRowView)dtGV2.Rows[0].DataBoundItem).DataView.Table.Rows[i + 1][12] = error[i];
+
+            Console.WriteLine("Paridad Original :: " + string.Join("", originalParity));
+            Console.WriteLine("Paridad Calculada :: " + string.Join("", actualParity));
+            Console.WriteLine("Bit del Error :: " + errorBit);
         }
 
         private void Pantalla3_FormClosing(object sender, FormClosingEventArgs e)

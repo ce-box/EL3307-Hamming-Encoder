@@ -13,19 +13,22 @@ namespace WindowsFormsApp4.Modulos
     class HammingCode
     {
         // Environment settings
-        const int columns = 11;
-        const int rows = 6;
         const int defaultVal = 5; // Default value of the matrix, it cannot be neither 0 nor 1
         const int dataSize = 7;
         const int redundantBits = 4;
+        const int columns = dataSize + redundantBits;
+        const int rows = redundantBits + 2;
         int parity = 0; // Even parity by default
 
 
         // Global Variables
         public static int[,] hammingMatrix = new int[rows, columns];
-        public static string lastParity = "";
-        public static string currentParity = "";
-        public static int errorBit = 0;
+        
+        // Error Detection  Variables
+        public int[] originalParity, currentParity;
+        public int[] errorArray = new int[redundantBits];
+        public int errorBit = 0;
+        
 
         // -----------------------------------------------------------------
         // Data encoding and error detection
@@ -39,11 +42,10 @@ namespace WindowsFormsApp4.Modulos
         {
             if (data.Length != dataSize) return new int[0, 0];
 
-            Init();
-            int[] bitArray = SplitData(data);
+            int[] bitArray = SplitInputData(data);
             bitArray = CalculateParity(bitArray);
+            
             FillMatrix(bitArray);
-
             Show();
 
             return hammingMatrix;
@@ -58,7 +60,23 @@ namespace WindowsFormsApp4.Modulos
          */
         public int[,] ErrorDetection(string data)
         {
-            return new int[1, 2];
+            if (data.Length != columns) return new int[0, 0];
+
+            int[] bitArray = SplitCodeData(data);
+            originalParity = GetParityBits(bitArray);
+            
+            bitArray = CalculateParity(bitArray);
+            currentParity = GetParityBits(bitArray);
+
+            if (!CompareParity(originalParity, currentParity))
+                errorArray = FindError(originalParity, currentParity);
+
+            errorBit = GetErrorPosition(errorArray);
+
+            FillMatrix(bitArray);
+            Show();
+
+            return hammingMatrix;
         }
 
         /**
@@ -81,7 +99,7 @@ namespace WindowsFormsApp4.Modulos
          *  @param string data binary message
          *  @return int[] resulting bit array
          */
-        private int[] SplitData(string data)
+        private int[] SplitInputData(string data)
         {
             int[] bitArray = new int[columns];
             int index = 0;
@@ -93,6 +111,21 @@ namespace WindowsFormsApp4.Modulos
                     index++;
                 }
             }
+
+            return bitArray;
+        }
+
+        /**
+         *  Receive the binary encoded message and separate it by bits into a bit array
+         *  
+         *  @param string code binary message encoded with hamming
+         *  @return int[] resulting bit array
+         */
+        private int[] SplitCodeData(string code)
+        {
+            int[] bitArray = new int[columns];
+            for (int i = 0; i < columns; i++)
+                bitArray[i] = code[i].Equals('1') ? 1 : 0;
 
             return bitArray;
         }
@@ -185,7 +218,10 @@ namespace WindowsFormsApp4.Modulos
             int index = 0;
 
             while (index < redundantBits)
+            {
                 errorArray[index] = p1[index] != p2[index] ? 1 : 0;
+                index++;
+            }
 
             return errorArray;
         }
@@ -198,8 +234,7 @@ namespace WindowsFormsApp4.Modulos
          */
         private int GetErrorPosition(int[] errorArray)
         {
-            Array.Reverse(errorArray);
-            int errorPosition = 0;
+            int errorPosition = 1;
             for (int n = 0; n < redundantBits; n++)
                 errorPosition += errorArray[n] * (int)Math.Pow(n, 2);
 
@@ -255,6 +290,7 @@ namespace WindowsFormsApp4.Modulos
          */
         private void FillMatrix(int[] data)
         {
+            Init();
             WriteFirstLine(data);
             WriteLines(data);
             WriteLastLine(data);
