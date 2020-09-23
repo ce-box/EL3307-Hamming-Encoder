@@ -58,7 +58,8 @@ namespace WindowsFormsApp4.Modulos
          * @param int partity Defines whether the algorithm will encode/parse 
          * the message with even (0) or odd (1) parity
          */
-        public void SetParity(int parity){
+        public void SetParity(int parity)
+        {
             this.parity = parity;
         }
 
@@ -73,7 +74,17 @@ namespace WindowsFormsApp4.Modulos
          */
         private int[] SplitData(string data)
         {
-            return new int[7];
+            int[] bitArray = new int[columns];
+            int index = 0;
+
+            for (int i = 0; i < columns; i++){
+                if (!IsPowerOfTwo(i)){
+                    bitArray[i] = data[index];
+                    index++;
+                }
+            }
+
+            return bitArray;
         }
 
         /**
@@ -85,6 +96,25 @@ namespace WindowsFormsApp4.Modulos
          */
         private int[] CalculateParity(int[] bitArray)
         {
+            for (int rb = 0; rb < redundantBits; rb++)
+            {
+                int parityCol = 0;
+                int counter = 1;
+                // Count occurrences of 1 
+                for (int col  = 0; col < columns; col++)
+                {
+                    if (IsPowerOfTwo(col + 1)) continue;
+                    if (ParityBitPosition(col + 1, rb))
+                        counter += bitArray[col];
+                }
+
+                // Determine parity
+                if (parity == 1)
+                    bitArray[parityCol] = counter % 2 == 0 ? 1 : 0;
+                else
+                    bitArray[parityCol] = counter % 2 == 0 ? 0 : 1;
+            }
+
             return bitArray;
         }
 
@@ -98,7 +128,17 @@ namespace WindowsFormsApp4.Modulos
          */
         private int[] GetParityBits(int[] bitArray)
         {
-            return bitArray;
+            int[] parityArray = new int[redundantBits];
+            int index = 0;
+            for (int col = 0; col < columns; col++)
+            {
+                if(IsPowerOfTwo(col + 1))
+                {
+                    parityArray[index] = bitArray[col];
+                    index++;
+                }
+            }
+            return parityArray;
         }
 
         /**
@@ -109,7 +149,15 @@ namespace WindowsFormsApp4.Modulos
          * @return bool If the parities are equal, it returns true, otherwise false.
          */
         private bool CompareParity(int[] p1, int[] p2)
-        {
+        {    
+            int index = 0;
+
+            while (index < redundantBits){
+                if (p1[index] != p2[index])
+                    return false;
+                index++;
+            }
+
             return true;
         }
 
@@ -123,7 +171,13 @@ namespace WindowsFormsApp4.Modulos
          */
         private int[] FindError(int[] p1, int[] p2)
         {
-            return p1;
+            int[] errorArray = new int[redundantBits];
+            int index = 0;
+
+            while (index < redundantBits)
+                errorArray[index] = p1[index] != p2[index] ? 1 : 0;
+
+            return errorArray;
         }
 
         /**
@@ -134,7 +188,12 @@ namespace WindowsFormsApp4.Modulos
          */
         private int GetErrorPosition(int[] errorArray)
         {
-            return 0;
+            Array.Reverse(errorArray);
+            int errorPosition = 0;
+            for (int n = 0; n < redundantBits; n++)
+                errorPosition += errorArray[n] * (int)Math.Pow(n, 2);
+
+            return errorPosition;
         }
 
         // -----------------------------------------------------------------
@@ -147,7 +206,8 @@ namespace WindowsFormsApp4.Modulos
          */
         private bool IsPowerOfTwo(int position)
         {
-            return true;
+            var result = Math.Log(position, 2);
+            return result % 1 == 0;
         }
 
         /**
@@ -159,7 +219,7 @@ namespace WindowsFormsApp4.Modulos
          */
         private bool ParityBitPosition(int index, int lsbPosition)
         {
-            return true;
+            return ((index >> lsbPosition) & 1) == 1;
         }
 
         // -----------------------------------------------------------------
@@ -167,9 +227,12 @@ namespace WindowsFormsApp4.Modulos
         /**
          * Start the matrix by filling it with neutral values
          */
-        private void Init(){
-            for (int row = 0; row < rows; row++){
-                for (int col = 0; col < columns; col++){
+        private void Init()
+        {
+            for (int row = 0; row < rows; row++)
+            {
+                for (int col = 0; col < columns; col++)
+                {
                     hammingMatrix[row, col] = defaultVal;
                 }
             }
@@ -180,11 +243,12 @@ namespace WindowsFormsApp4.Modulos
          * 
          * @param int[] data Array with hamming code
          */
-        private void WriteFirstLine(int[] data){
-            for (int col = 0; col < columns; col++){
-                if (!IsPowerOfTwo(col + 1)){
+        private void WriteFirstLine(int[] data)
+        {
+            for (int col = 0; col < columns; col++)
+            {
+                if (!IsPowerOfTwo(col + 1))
                     hammingMatrix[0, col] = data[col];
-                }
             }
         }
 
@@ -193,11 +257,12 @@ namespace WindowsFormsApp4.Modulos
          * 
          * @param int[] data Array with hamming code
          */
-        private void WriteLastLine(int[] data){
-            for (int col = 0; col < columns; col++){
-                if (!IsPowerOfTwo(col + 1)){
+        private void WriteLastLine(int[] data)
+        {
+            for (int col = 0; col < columns; col++)
+            {
+                if (!IsPowerOfTwo(col + 1))
                     hammingMatrix[rows-1, col] = data[col];
-                }
             }
         }
 
@@ -206,11 +271,13 @@ namespace WindowsFormsApp4.Modulos
          * 
          * @param int[] data Array with hamming code
          */
-        private void WriteLines(int[] data){
-            for (int rb = 0; rb  < redundantBits; rb++){
-
+        private void WriteLines(int[] data)
+        {
+            for (int rb = 0; rb  < redundantBits; rb++)
+            {
                 int parityCol = ((int)Math.Pow(2, rb)) - 1;
-                for (int col = 0; col  < columns; col++){
+                for (int col = 0; col  < columns; col++)
+                {
                     if (IsPowerOfTwo(col + 1)) 
                         continue;
                     if (ParityBitPosition(col + 1, rb))
@@ -223,9 +290,12 @@ namespace WindowsFormsApp4.Modulos
         /**
          * Show matrix in console
          */
-        private void Show(){
-            for (int row = 0; row < rows; row++){
-                for (int col = 0; col < columns; col++){
+        private void Show()
+        {
+            for (int row = 0; row < rows; row++) 
+            { 
+                for (int col = 0; col < columns; col++)
+                {
                     int bit = hammingMatrix[row, col];
                     string value = bit != defaultVal ? bit.ToString() : " ";
                     Console.Write(value + " | ");
