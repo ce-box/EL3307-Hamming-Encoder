@@ -152,9 +152,6 @@ namespace WindowsFormsApp4
 
         }
 
-        private void txtE1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
