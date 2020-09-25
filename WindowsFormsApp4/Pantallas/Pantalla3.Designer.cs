@@ -40,6 +40,7 @@
             this.lbError2 = new System.Windows.Forms.Label();
             this.lbError3 = new System.Windows.Forms.Label();
             this.lbError4 = new System.Windows.Forms.Label();
+            this.checkParidad = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtGV1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGV2)).BeginInit();
             this.SuspendLayout();
@@ -162,11 +163,23 @@
             this.lbError4.Size = new System.Drawing.Size(0, 13);
             this.lbError4.TabIndex = 11;
             // 
+            // checkParidad
+            // 
+            this.checkParidad.AutoSize = true;
+            this.checkParidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkParidad.Location = new System.Drawing.Point(830, 297);
+            this.checkParidad.Name = "checkParidad";
+            this.checkParidad.Size = new System.Drawing.Size(104, 19);
+            this.checkParidad.TabIndex = 12;
+            this.checkParidad.Text = "Paridad impar";
+            this.checkParidad.UseVisualStyleBackColor = true;
+            // 
             // Pantalla3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 591);
+            this.Controls.Add(this.checkParidad);
             this.Controls.Add(this.lbError4);
             this.Controls.Add(this.lbError3);
             this.Controls.Add(this.lbError2);
@@ -204,6 +217,7 @@
         private System.Windows.Forms.Label lbError2;
         private System.Windows.Forms.Label lbError3;
         private System.Windows.Forms.Label lbError4;
+        private System.Windows.Forms.CheckBox checkParidad;
     }
 }
 

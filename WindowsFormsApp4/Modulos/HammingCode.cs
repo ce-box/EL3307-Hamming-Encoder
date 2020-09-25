@@ -14,7 +14,7 @@ namespace WindowsFormsApp4.Modulos
         const int redundantBits = 5;
         const int columns = dataSize + redundantBits;
         const int rows = redundantBits + 2;
-        int parity = 0; // Even parity by default
+        public int parity = 0; // Even parity by default
 
 
         // Global Variables
@@ -235,7 +235,7 @@ namespace WindowsFormsApp4.Modulos
         {
             int errorPosition = 0;
             Array.Reverse(errorArray);
-            string binary = string.join("",errorArray);
+            string binary = string.Join("",errorArray);
             errorPosition = Convert.ToInt32(binary, 2); 
             return errorPosition;
         }

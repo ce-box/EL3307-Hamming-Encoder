@@ -117,6 +117,14 @@ namespace WindowsFormsApp4
                 if (numero.Length == con)
                 {
                     HammingCode hamming = new HammingCode();
+                    if (checkParidad.Checked == true)
+                    {
+                        hamming.SetParity(1);
+                    }
+                    else
+                    {
+                        hamming.SetParity(0);
+                    }
                     int[,] result = hamming.DataEncoding(numero);
 
                     for (int row = 0; row < 6; row++)
@@ -154,11 +162,22 @@ namespace WindowsFormsApp4
         private void btn2_Click(object sender, EventArgs e)
         {
             HammingCode hamming = new HammingCode();
+            
+            if (checkParidad.Checked == true)
+            {
+                hamming.SetParity(1);
+            }
+            else
+            {
+                hamming.SetParity(0);
+            }
+
+            
             Console.WriteLine("-------------------------------------");
             //string code = "";
             //for (int con = 1; con < 18; con++)
             //{
-            //  code = code + ((DataRowView)dtGV1.Rows[0].DataBoundItem).DataView.Table.Rows[5][con].ToString();
+            //  code = code + ((DataRowView)dtGV1.Rows[0].DataBoundItem).DataView.Table.Rows[6][con].ToString();
             //}
             string code = "11111010100110110";
             int[,] result = hamming.ErrorDetection(code);
@@ -217,5 +236,7 @@ namespace WindowsFormsApp4
         {
 
         }
+
+        
     }
 }
