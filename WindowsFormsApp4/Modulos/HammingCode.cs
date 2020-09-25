@@ -234,9 +234,9 @@ namespace WindowsFormsApp4.Modulos
         private int GetErrorPosition(int[] errorArray)
         {
             int errorPosition = 0;
-            for (int n = 0; n < redundantBits; n++)
-                errorPosition += errorArray[n] * (int)Math.Pow(n, 2);
-
+            Array.Reverse(errorArray);
+            string binary = string.join("",errorArray);
+            errorPosition = Convert.ToInt32(binary, 2); 
             return errorPosition;
         }
 
