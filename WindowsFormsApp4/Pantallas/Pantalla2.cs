@@ -46,6 +46,7 @@ namespace WindowsFormsApp4
             {
                 txt1.Text=convertir.bi_hexa(numero);
                 txt2.Text =convertir.bi_octal(numero);
+                textBox1.Text = convertir.bi_dec(numero).ToString();
                 nRZI.rellenar(numero,chart1);
                 con = 0;
             }

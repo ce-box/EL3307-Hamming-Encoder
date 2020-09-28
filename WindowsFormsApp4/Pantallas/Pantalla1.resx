@@ -139,7 +139,7 @@
     <value>160, 50, 0, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>292, 98</value>
+    <value>269, 89</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -238,7 +238,7 @@
     <value>4</value>
   </data>
   <data name="button2.Text" xml:space="preserve">
-    <value>Binario a Hexa/Octa</value>
+    <value>Binario a Hexa/Dec/Octa</value>
   </data>
   <data name="&gt;&gt;button2.Name" xml:space="preserve">
     <value>button2</value>

@@ -47,6 +47,7 @@ namespace WindowsFormsApp4
 
             return final;
         }
+
         public string diccionario_B_H(string caracter)
         {
             switch (caracter)
@@ -213,7 +214,53 @@ namespace WindowsFormsApp4
 
         }
 
+
+        public double bi_dec(string numero)
+        {
+            if (numero.Length % 3 == 1)
+            {
+                numero = "00" + numero;
+                return separador_3d2(numero);
+
+            }
+            else if (numero.Length % 3 == 2)
+            {
+                numero = "0" + numero;
+                return separador_3d2(numero);
+            }
+            else
+            {
+                return separador_3d2(numero);
+            }
+
+
+        }
+        public double separador_3d2(string numero)
+        {
+            double final=0;
+            int con = numero.Length-1;
+            int con2 = 0;
+           
+
+
+            while (con != -1)
+            {
+                final = final + Convert.ToInt32(numero.Substring(con2 * 1, 1))*Math.Pow(2,con);
+                con=con-1;
+                con2++;
+            }
+
+
+            return final;
+        }
+
+       
+            
         
+
+
+
+
 
     }
 }
