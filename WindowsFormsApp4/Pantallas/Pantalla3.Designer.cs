@@ -52,7 +52,7 @@
             this.dtGV1.ColumnHeadersHeight = 29;
             this.dtGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtGV1.Location = new System.Drawing.Point(64, 60);
-            this.dtGV1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtGV1.Margin = new System.Windows.Forms.Padding(4);
             this.dtGV1.Name = "dtGV1";
             this.dtGV1.RowHeadersWidth = 51;
             this.dtGV1.Size = new System.Drawing.Size(992, 208);
@@ -66,7 +66,7 @@
             this.dtGV2.ColumnHeadersHeight = 29;
             this.dtGV2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtGV2.Location = new System.Drawing.Point(64, 375);
-            this.dtGV2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtGV2.Margin = new System.Windows.Forms.Padding(4);
             this.dtGV2.Name = "dtGV2";
             this.dtGV2.RowHeadersWidth = 51;
             this.dtGV2.Size = new System.Drawing.Size(992, 207);
@@ -80,7 +80,7 @@
             this.label1.Location = new System.Drawing.Point(502, 14);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 40);
+            this.label1.Size = new System.Drawing.Size(95, 32);
             this.label1.TabIndex = 2;
             this.label1.Text = "label1";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -93,7 +93,7 @@
             this.label3.Location = new System.Drawing.Point(60, 297);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 23);
+            this.label3.Size = new System.Drawing.Size(69, 19);
             this.label3.TabIndex = 4;
             this.label3.Text = "Entrada";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -103,9 +103,10 @@
             this.textBox1.BackColor = System.Drawing.SystemColors.MenuBar;
             this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(151, 295);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.MaxLength = 12;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(445, 32);
+            this.textBox1.Size = new System.Drawing.Size(445, 27);
             this.textBox1.TabIndex = 5;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -117,7 +118,7 @@
             this.btn1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn1.Location = new System.Drawing.Point(627, 287);
-            this.btn1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn1.Margin = new System.Windows.Forms.Padding(4);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(121, 53);
             this.btn1.TabIndex = 6;
@@ -134,7 +135,7 @@
             this.btn2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn2.Location = new System.Drawing.Point(771, 288);
-            this.btn2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn2.Margin = new System.Windows.Forms.Padding(4);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(118, 53);
             this.btn2.TabIndex = 6;
@@ -149,7 +150,7 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.button1.Location = new System.Drawing.Point(497, 664);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(159, 62);
             this.button1.TabIndex = 7;
@@ -165,7 +166,7 @@
             this.lbError1.Location = new System.Drawing.Point(61, 606);
             this.lbError1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbError1.Name = "lbError1";
-            this.lbError1.Size = new System.Drawing.Size(0, 23);
+            this.lbError1.Size = new System.Drawing.Size(0, 19);
             this.lbError1.TabIndex = 8;
             // 
             // lbError2
@@ -176,7 +177,7 @@
             this.lbError2.Location = new System.Drawing.Point(295, 606);
             this.lbError2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbError2.Name = "lbError2";
-            this.lbError2.Size = new System.Drawing.Size(0, 23);
+            this.lbError2.Size = new System.Drawing.Size(0, 19);
             this.lbError2.TabIndex = 9;
             // 
             // lbError3
@@ -187,7 +188,7 @@
             this.lbError3.Location = new System.Drawing.Point(584, 606);
             this.lbError3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbError3.Name = "lbError3";
-            this.lbError3.Size = new System.Drawing.Size(0, 23);
+            this.lbError3.Size = new System.Drawing.Size(0, 19);
             this.lbError3.TabIndex = 10;
             // 
             // lbError4
@@ -198,7 +199,7 @@
             this.lbError4.Location = new System.Drawing.Point(906, 606);
             this.lbError4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbError4.Name = "lbError4";
-            this.lbError4.Size = new System.Drawing.Size(0, 23);
+            this.lbError4.Size = new System.Drawing.Size(0, 19);
             this.lbError4.TabIndex = 11;
             // 
             // checkParidad
@@ -207,16 +208,16 @@
             this.checkParidad.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkParidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.checkParidad.Location = new System.Drawing.Point(910, 304);
-            this.checkParidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkParidad.Margin = new System.Windows.Forms.Padding(4);
             this.checkParidad.Name = "checkParidad";
-            this.checkParidad.Size = new System.Drawing.Size(146, 23);
+            this.checkParidad.Size = new System.Drawing.Size(123, 21);
             this.checkParidad.TabIndex = 12;
             this.checkParidad.Text = "Paridad impar";
             this.checkParidad.UseVisualStyleBackColor = true;
             // 
             // Pantalla3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1112, 774);
@@ -235,7 +236,7 @@
             this.Controls.Add(this.dtGV1);
             this.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Pantalla3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

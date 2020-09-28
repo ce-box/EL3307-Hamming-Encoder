@@ -18,10 +18,11 @@ namespace WindowsFormsApp4.Modulos
             string numero = "";
             int ind = 0;
             int control = 1;
-            chart1.Series["NRZI"].Points.AddXY(ind, 1);
-            chart1.Series["Centro"].Points.AddXY(-1, 0);
-            chart1.Series["Centro"].Points.AddXY(ind, 0);
+            chart1.Series["Centro"].Points.AddXY(-1, -1);
+            chart1.Series["Centro"].Points.AddXY(ind, -1);
             chart1.Series["Centro"].Color = Color.Black;
+            chart1.Series["NRZI"].Points.AddXY(ind, 1);
+            
 
             while (ind != binario.Length)
             {
@@ -29,14 +30,14 @@ namespace WindowsFormsApp4.Modulos
                 if (numero == "0" && control == 1)
                 {
                     chart1.Series["NRZI"].Points.AddXY(ind, 1);
-                    chart1.Series["Centro"].Points.AddXY(ind, 0);
+                    chart1.Series["Centro"].Points.AddXY(ind, -1);
                     chart1.ChartAreas[0].AxisX.CustomLabels.Add(ind, ind+1, "0");
                     ind++;
                 }
                 else if (numero == "0" && control == 0)
                 {
                     chart1.Series["NRZI"].Points.AddXY(ind, -1);
-                    chart1.Series["Centro"].Points.AddXY(ind, 0);
+                    chart1.Series["Centro"].Points.AddXY(ind, -1);
                     chart1.ChartAreas[0].AxisX.CustomLabels.Add(ind, ind+1, "0");
                     ind++;
                 }
@@ -44,7 +45,7 @@ namespace WindowsFormsApp4.Modulos
                 {
                     chart1.Series["NRZI"].Points.AddXY(ind, -1);
                     chart1.Series["NRZI"].Points.AddXY(ind, 1);
-                    chart1.Series["Centro"].Points.AddXY(ind, 0);
+                    chart1.Series["Centro"].Points.AddXY(ind, -1);
                     chart1.ChartAreas[0].AxisX.CustomLabels.Add(ind, ind+1, "1");
                     control = 1;
                     ind++;
@@ -54,7 +55,7 @@ namespace WindowsFormsApp4.Modulos
 
                     chart1.Series["NRZI"].Points.AddXY(ind, 1);
                     chart1.Series["NRZI"].Points.AddXY(ind, -1);
-                    chart1.Series["Centro"].Points.AddXY(ind, 0);
+                    chart1.Series["Centro"].Points.AddXY(ind, -1);
                     chart1.ChartAreas[0].AxisX.CustomLabels.Add(ind, ind+1, "1");
                     control = 0;
                     ind++;
@@ -64,15 +65,15 @@ namespace WindowsFormsApp4.Modulos
             if (control == 1)
             {
                 chart1.Series["NRZI"].Points.AddXY(ind, 1);
-                chart1.Series["Centro"].Points.AddXY(ind, 0);
-                chart1.Series["Centro"].Points.AddXY(ind + 1, 0);
+                chart1.Series["Centro"].Points.AddXY(ind, -1);
+                chart1.Series["Centro"].Points.AddXY(ind + 1, -1);
                 
             }
             else
             {
                 chart1.Series["NRZI"].Points.AddXY(ind, -1);
-                chart1.Series["Centro"].Points.AddXY(ind, 0);
-                chart1.Series["Centro"].Points.AddXY(ind + 1, 0);
+                chart1.Series["Centro"].Points.AddXY(ind, -1);
+                chart1.Series["Centro"].Points.AddXY(ind + 1, -1);
                 
             }
 
@@ -84,14 +85,15 @@ namespace WindowsFormsApp4.Modulos
 
         public void rellenar2(string binario, Chart chart2)
         {
+            chart2.ChartAreas[0].AxisX.CustomLabels.Clear();
             chart2.Series["NRZI"].Points.Clear();
             chart2.Series["Centro"].Points.Clear();
             string numero = "";
             int ind = 0;
             int control = 1;
             chart2.Series["NRZI"].Points.AddXY(ind, 1);
-            chart2.Series["Centro"].Points.AddXY(-1, 0);
-            chart2.Series["Centro"].Points.AddXY(ind, 0);
+            chart2.Series["Centro"].Points.AddXY(-1, -1);
+            chart2.Series["Centro"].Points.AddXY(ind, -1);
             chart2.Series["Centro"].Color = Color.Black;
 
             while (ind != binario.Length)
@@ -100,14 +102,14 @@ namespace WindowsFormsApp4.Modulos
                 if (numero == "0" && control == 1)
                 {
                     chart2.Series["NRZI"].Points.AddXY(ind, 1);
-                    chart2.Series["Centro"].Points.AddXY(ind, 0);
+                    chart2.Series["Centro"].Points.AddXY(ind, -1);
                     chart2.ChartAreas[0].AxisX.CustomLabels.Add(ind, ind + 1, "0");
                     ind++;
                 }
                 else if (numero == "0" && control == 0)
                 {
                     chart2.Series["NRZI"].Points.AddXY(ind, -1);
-                    chart2.Series["Centro"].Points.AddXY(ind, 0);
+                    chart2.Series["Centro"].Points.AddXY(ind, -1);
                     chart2.ChartAreas[0].AxisX.CustomLabels.Add(ind, ind + 1, "0");
                     ind++;
                 }
@@ -115,7 +117,7 @@ namespace WindowsFormsApp4.Modulos
                 {
                     chart2.Series["NRZI"].Points.AddXY(ind, -1);
                     chart2.Series["NRZI"].Points.AddXY(ind, 1);
-                    chart2.Series["Centro"].Points.AddXY(ind, 0);
+                    chart2.Series["Centro"].Points.AddXY(ind, -1);
                     chart2.ChartAreas[0].AxisX.CustomLabels.Add(ind, ind + 1, "1");
                     control = 1;
                     ind++;
@@ -125,7 +127,7 @@ namespace WindowsFormsApp4.Modulos
 
                     chart2.Series["NRZI"].Points.AddXY(ind, 1);
                     chart2.Series["NRZI"].Points.AddXY(ind, -1);
-                    chart2.Series["Centro"].Points.AddXY(ind, 0);
+                    chart2.Series["Centro"].Points.AddXY(ind, -1);
                     chart2.ChartAreas[0].AxisX.CustomLabels.Add(ind, ind + 1, "1");
                     control = 0;
                     ind++;
@@ -134,14 +136,14 @@ namespace WindowsFormsApp4.Modulos
             if (control == 1)
             {
                 chart2.Series["NRZI"].Points.AddXY(ind, 1);
-                chart2.Series["Centro"].Points.AddXY(ind, 0);
-                chart2.Series["Centro"].Points.AddXY(ind + 1, 0);
+                chart2.Series["Centro"].Points.AddXY(ind, -1);
+                chart2.Series["Centro"].Points.AddXY(ind + 1, -1);
             }
             else
             {
                 chart2.Series["NRZI"].Points.AddXY(ind, -1);
-                chart2.Series["Centro"].Points.AddXY(ind, 0);
-                chart2.Series["Centro"].Points.AddXY(ind + 1, 0);
+                chart2.Series["Centro"].Points.AddXY(ind, -1);
+                chart2.Series["Centro"].Points.AddXY(ind + 1, -1);
             }
 
         }

@@ -82,14 +82,12 @@ namespace WindowsFormsApp4
             chart1.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.Gainsboro;
             chart1.ChartAreas[0].AxisX.LineColor = Color.White;
             chart1.ChartAreas[0].AxisY.LabelStyle.Enabled = false;
-            
-
-
-            //chart1.ChartAreas[0].AxisX.LabelStyle.Enabled = false;
             chart1.ChartAreas[0].AxisY.Title= "Amplitud";
             chart1.ChartAreas[0].AxisX.Title = "Time";
-            chart1.Series["NRZI"].IsVisibleInLegend = false;
             chart1.Series["Centro"].IsVisibleInLegend = false;
+            chart1.Series["NRZI"].IsVisibleInLegend = false;
+            chart1.Series["NRZI"].Color = Color.LimeGreen;
+            chart1.Series["NRZI"].BorderWidth = 2;
 
         }
 
