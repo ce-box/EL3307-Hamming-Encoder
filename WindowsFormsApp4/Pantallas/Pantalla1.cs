@@ -101,7 +101,9 @@ namespace WindowsFormsApp4
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            
+            Program.pantalla1.Hide();
+            Program.pantalla4 = new Pantalla4();
+            Program.pantalla4.Show();
         }
     }
     

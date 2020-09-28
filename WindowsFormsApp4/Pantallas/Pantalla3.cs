@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp4.Modulos;
+using WindowsFormsApp4.Pantallas;
 
 namespace WindowsFormsApp4
 {
@@ -145,14 +146,16 @@ namespace WindowsFormsApp4
                 }
                 else
                 {
-                    MessageBox.Show("Caracteres invalidos");
+                    Program.alert = new Alert();
+                    Program.alert.Show();
                 }
 
                 
             }
             else
             {
-                MessageBox.Show("La cantidad de bits no es adecuada");
+                Program.alert = new Alert();
+                Program.alert.Show();
             }
 
             

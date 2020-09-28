@@ -73,6 +73,12 @@
     <Compile Include="Pantallas\Pantalla1.Designer.cs">
       <DependentUpon>Pantalla1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pantallas\Pantalla4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Pantalla4.Designer.cs">
+      <DependentUpon>Pantalla4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Pantallas\Alert.resx">
@@ -89,6 +95,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\Pantalla1.resx">
       <DependentUpon>Pantalla1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Pantalla4.resx">
+      <DependentUpon>Pantalla4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

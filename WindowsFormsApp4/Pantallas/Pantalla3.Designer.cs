@@ -51,7 +51,7 @@
             this.dtGV1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtGV1.ColumnHeadersHeight = 29;
             this.dtGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dtGV1.Location = new System.Drawing.Point(52, 52);
+            this.dtGV1.Location = new System.Drawing.Point(64, 60);
             this.dtGV1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtGV1.Name = "dtGV1";
             this.dtGV1.RowHeadersWidth = 51;
@@ -65,7 +65,7 @@
             this.dtGV2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtGV2.ColumnHeadersHeight = 29;
             this.dtGV2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dtGV2.Location = new System.Drawing.Point(52, 367);
+            this.dtGV2.Location = new System.Drawing.Point(64, 375);
             this.dtGV2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtGV2.Name = "dtGV2";
             this.dtGV2.RowHeadersWidth = 51;
@@ -77,7 +77,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.LightSteelBlue;
-            this.label1.Location = new System.Drawing.Point(490, 6);
+            this.label1.Location = new System.Drawing.Point(502, 14);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 40);
@@ -90,7 +90,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label3.Location = new System.Drawing.Point(48, 289);
+            this.label3.Location = new System.Drawing.Point(60, 297);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 23);
@@ -102,7 +102,7 @@
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.MenuBar;
             this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(139, 287);
+            this.textBox1.Location = new System.Drawing.Point(151, 295);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(445, 32);
@@ -116,7 +116,7 @@
             this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn1.Location = new System.Drawing.Point(615, 279);
+            this.btn1.Location = new System.Drawing.Point(627, 287);
             this.btn1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(121, 53);
@@ -133,7 +133,7 @@
             this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn2.Location = new System.Drawing.Point(759, 280);
+            this.btn2.Location = new System.Drawing.Point(771, 288);
             this.btn2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(118, 53);
@@ -148,7 +148,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(491, 641);
+            this.button1.Location = new System.Drawing.Point(497, 664);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(159, 62);
@@ -162,7 +162,7 @@
             this.lbError1.AutoSize = true;
             this.lbError1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbError1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lbError1.Location = new System.Drawing.Point(49, 598);
+            this.lbError1.Location = new System.Drawing.Point(61, 606);
             this.lbError1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbError1.Name = "lbError1";
             this.lbError1.Size = new System.Drawing.Size(0, 23);
@@ -173,7 +173,7 @@
             this.lbError2.AutoSize = true;
             this.lbError2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbError2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lbError2.Location = new System.Drawing.Point(283, 598);
+            this.lbError2.Location = new System.Drawing.Point(295, 606);
             this.lbError2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbError2.Name = "lbError2";
             this.lbError2.Size = new System.Drawing.Size(0, 23);
@@ -184,7 +184,7 @@
             this.lbError3.AutoSize = true;
             this.lbError3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbError3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lbError3.Location = new System.Drawing.Point(572, 598);
+            this.lbError3.Location = new System.Drawing.Point(584, 606);
             this.lbError3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbError3.Name = "lbError3";
             this.lbError3.Size = new System.Drawing.Size(0, 23);
@@ -195,7 +195,7 @@
             this.lbError4.AutoSize = true;
             this.lbError4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbError4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lbError4.Location = new System.Drawing.Point(894, 598);
+            this.lbError4.Location = new System.Drawing.Point(906, 606);
             this.lbError4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbError4.Name = "lbError4";
             this.lbError4.Size = new System.Drawing.Size(0, 23);
@@ -206,7 +206,7 @@
             this.checkParidad.AutoSize = true;
             this.checkParidad.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkParidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.checkParidad.Location = new System.Drawing.Point(898, 296);
+            this.checkParidad.Location = new System.Drawing.Point(910, 304);
             this.checkParidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkParidad.Name = "checkParidad";
             this.checkParidad.Size = new System.Drawing.Size(146, 23);
@@ -219,7 +219,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(1094, 727);
+            this.ClientSize = new System.Drawing.Size(1112, 774);
             this.Controls.Add(this.checkParidad);
             this.Controls.Add(this.lbError4);
             this.Controls.Add(this.lbError3);

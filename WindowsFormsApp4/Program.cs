@@ -15,6 +15,7 @@ namespace WindowsFormsApp4
         public static Pantalla1 pantalla1;
         public static Pantalla2 pantalla2;
         public static Pantalla3 pantalla3;
+        public static Pantalla4 pantalla4;
         public static Alert alert;
         [STAThread]
         static void Main()

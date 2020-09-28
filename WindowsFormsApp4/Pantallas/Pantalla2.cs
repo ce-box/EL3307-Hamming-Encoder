@@ -59,51 +59,6 @@ namespace WindowsFormsApp4
             
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            txtE2.Text = txtE2.Text.ToUpper();
-            string numero = txtE2.Text;
-            
-            bool verificado = false;
-            int con = 0;
-            while(con < numero.Length) {
-                for (int i = 0; i < 16; i++)
-                {
-                    if (numero.Substring(con, 1) == hexadecimal[i])
-                    {
-                        verificado = true;
-
-                    }
-                }
-                if (verificado == false)
-                {
-                    txt3.Text = "Error Caracter Invalido";
-                    
-                    break;
-                }
-                else
-                {
-                    verificado = false;
-                }
-                con++;
-            }
-            if (con == numero.Length)
-            {
-                txt3.Text = convertir.hexa_bi(txtE2.Text);
-
-                nRZI.rellenar2(txt3.Text, chart2);
-                
-                con = 0;
-            }
-            else
-            {
-                Program.alert= new Alert();
-                Program.alert.Show();
-                con = 0;
-            }
-            
-            
-        }
 
         private void Pantalla2_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -136,23 +91,6 @@ namespace WindowsFormsApp4
             chart1.Series["NRZI"].IsVisibleInLegend = false;
             chart1.Series["Centro"].IsVisibleInLegend = false;
 
-            chart2.Titles.Add("NRZI Grafico");
-            chart2.ChartAreas[0].AxisY.Maximum = 1.5;
-            chart2.ChartAreas[0].AxisY.Minimum = -1.5;
-            chart2.ChartAreas[0].AxisX.Minimum = -1;
-            chart2.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.Gainsboro;
-            chart2.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.Gainsboro;
-            chart2.ChartAreas[0].AxisX.LineColor = Color.White;
-            chart2.ChartAreas[0].AxisY.LabelStyle.Enabled = false;
-            //chart2.ChartAreas[0].AxisX.LabelStyle.Enabled = false;
-            chart2.ChartAreas[0].AxisY.Title = "Amplitud";
-            chart2.ChartAreas[0].AxisX.Title = "Time";
-            chart2.Series["NRZI"].IsVisibleInLegend = false;
-            chart2.Series["Centro"].IsVisibleInLegend = false;
-
-            
-            
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -161,6 +99,21 @@ namespace WindowsFormsApp4
         }
 
         private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chart2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtE2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt3_TextChanged(object sender, EventArgs e)
         {
 
         }
