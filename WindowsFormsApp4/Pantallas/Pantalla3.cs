@@ -127,9 +127,9 @@ namespace WindowsFormsApp4
                     }
                     int[,] result = hamming.DataEncoding(numero);
 
-                    for (int row = 0; row < 6; row++)
+                    for (int row = 0; row < 7; row++)
                     {
-                        for (int col = 0; col < 11; col++)
+                        for (int col = 0; col < 17; col++)
                         {
                             int data = result[row, col];
                             if (data == 5)
@@ -174,21 +174,21 @@ namespace WindowsFormsApp4
 
             
             Console.WriteLine("-------------------------------------");
-            //string code = "";
-            //for (int con = 1; con < 18; con++)
-            //{
-            //  code = code + ((DataRowView)dtGV1.Rows[0].DataBoundItem).DataView.Table.Rows[6][con].ToString();
-            //}
-            string code = "11111010100110110";
+            string code = "";
+            for (int con = 1; con < 18; con++)
+            {
+             code = code + ((DataRowView)dtGV1.Rows[0].DataBoundItem).DataView.Table.Rows[6][con].ToString();
+            }
+            
             int[,] result = hamming.ErrorDetection(code);
             int[] error = hamming.errorArray;
             int[] originalParity = hamming.originalParity;
             int[] actualParity = hamming.currentParity;
             int errorBit = hamming.errorBit;
-
-            for (int row = 0; row < 6; row++)
+            
+            for (int row = 0; row < 7; row++)
             {
-                for (int col = 0; col < 11; col++)
+                for (int col = 0; col < 17; col++)
                 {
                     int data = result[row, col];
                     if (data == 5)
@@ -198,8 +198,8 @@ namespace WindowsFormsApp4
                 }
             }
 
-            for (int i = 0; i < 4; i++)
-                ((DataRowView)dtGV2.Rows[0].DataBoundItem).DataView.Table.Rows[i + 1][12] = error[i];
+            for (int i = 0; i < 5; i++)
+                ((DataRowView)dtGV2.Rows[0].DataBoundItem).DataView.Table.Rows[i + 1][18] = error[i];
 
             lbError1.Text = "Error array :: " + string.Join("", error);
             lbError2.Text = "Paridad Original :: " + string.Join("", originalParity);

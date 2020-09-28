@@ -49,6 +49,12 @@
     <Compile Include="Modulos\HammingCode.cs" />
     <Compile Include="Modulos\NRZI.cs" />
     <Compile Include="Modulos\Convertidor.cs" />
+    <Compile Include="Pantallas\Alert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\Alert.Designer.cs">
+      <DependentUpon>Alert.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pantallas\Pantalla2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Pantallas\Alert.resx">
+      <DependentUpon>Alert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\Pantalla1.aa.resx">
+      <DependentUpon>Pantalla1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\Pantalla2.resx">
       <DependentUpon>Pantalla2.cs</DependentUpon>
     </EmbeddedResource>

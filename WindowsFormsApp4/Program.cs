@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp4.Pantallas;
 
 namespace WindowsFormsApp4
 {
@@ -14,6 +15,7 @@ namespace WindowsFormsApp4
         public static Pantalla1 pantalla1;
         public static Pantalla2 pantalla2;
         public static Pantalla3 pantalla3;
+        public static Alert alert;
         [STAThread]
         static void Main()
         {

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using WindowsFormsApp4.Modulos;
+using WindowsFormsApp4.Pantallas;
 
 namespace WindowsFormsApp4
 {
@@ -50,7 +51,8 @@ namespace WindowsFormsApp4
             }
             else
             {
-                MessageBox.Show("No se pudo realizar la conversión");
+                Program.alert = new Alert();
+                Program.alert.Show();
                 con = 0;
             }
             
@@ -95,7 +97,8 @@ namespace WindowsFormsApp4
             }
             else
             {
-                MessageBox.Show("No se pudo realizar la conversión");
+                Program.alert= new Alert();
+                Program.alert.Show();
                 con = 0;
             }
             
@@ -152,6 +155,14 @@ namespace WindowsFormsApp4
 
         }
 
-        
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
